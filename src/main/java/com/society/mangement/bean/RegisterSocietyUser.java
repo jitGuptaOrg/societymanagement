@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
@@ -22,13 +21,12 @@ public class RegisterSocietyUser implements Serializable {
 	 * This is system generated serialVersionUID
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Long id;
-	
+
 	@Column(name = "userName")
 	private String username;
 
@@ -36,10 +34,13 @@ public class RegisterSocietyUser implements Serializable {
 	private String password;
 
 	@Column(name = "mobileNo")
-	private int mobileNo;
+	private String mobileNo;
 
 	@Column(name = "emailId")
 	private String emailId;
+
+	@Column(name = "societyName")
+	private String societyName;
 
 	@Column(name = "flatNo")
 	private String flatNo;
@@ -54,25 +55,27 @@ public class RegisterSocietyUser implements Serializable {
 
 	}
 
-	public RegisterSocietyUser(Long id,String username, String password, int mobileNo, String emailId, String flatNo,
-			String wingName, String owner) {
+	public RegisterSocietyUser(Long id, String username, String password, String mobileNo, String emailId,
+			String societyName, String flatNo, String wingName, String owner) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.mobileNo = mobileNo;
 		this.emailId = emailId;
+		this.societyName = societyName;
 		this.flatNo = flatNo;
 		this.wingName = wingName;
 		this.owner = owner;
 
 	}
-	
-	public RegisterSocietyUser(String username, String password, int mobileNo, String emailId, String flatNo,
-			String wingName, String owner) {
+
+	public RegisterSocietyUser(String username, String password, String mobileNo, String emailId, String societyName,
+			String flatNo, String wingName, String owner) {
 		this.username = username;
 		this.password = password;
 		this.mobileNo = mobileNo;
 		this.emailId = emailId;
+		this.societyName = societyName;
 		this.flatNo = flatNo;
 		this.wingName = wingName;
 		this.owner = owner;
@@ -103,11 +106,11 @@ public class RegisterSocietyUser implements Serializable {
 		this.password = password;
 	}
 
-	public int getMobileNo() {
+	public String getMobileNo() {
 		return mobileNo;
 	}
 
-	public void setMobileNo(int mobileNo) {
+	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
 	}
 
@@ -117,6 +120,14 @@ public class RegisterSocietyUser implements Serializable {
 
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
+	}
+
+	public String getSocietyName() {
+		return societyName;
+	}
+
+	public void setSocietyName(String societyName) {
+		this.societyName = societyName;
 	}
 
 	public String getFlatNo() {

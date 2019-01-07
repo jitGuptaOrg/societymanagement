@@ -8,5 +8,20 @@
     "name": "sspring.jpa.properties.hibernate.dialect",
     "type": "java.lang.String",
     "description": "A description for 'sspring.jpa.properties.hibernate.dialect'"
+  },
+  {
+    "name": "spring.datasource.driver.class",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.driver.class'"
+  },
+  {
+    "name": "spring.datasource.driver.class",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.driver.class'"
+  },
+  {
+    "name": "sspring.jpa.properties.hibernate.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'sspring.jpa.properties.hibernate.dialect'"
   }
 ]}

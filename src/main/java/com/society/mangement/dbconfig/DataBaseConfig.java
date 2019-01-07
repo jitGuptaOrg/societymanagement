@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 import oracle.jdbc.pool.OracleDataSource;
 
@@ -17,10 +16,6 @@ import oracle.jdbc.pool.OracleDataSource;
 @EnableAutoConfiguration
 @ConfigurationProperties("spring.datasource")
 public class DataBaseConfig {
-	
-
-	@NotNull
-	private String driverClass;
 
 	@NotNull
 	private String username;
@@ -30,14 +25,6 @@ public class DataBaseConfig {
 
 	@NotNull
 	private String url;
-
-	public String getDriverClass() {
-		return driverClass;
-	}
-
-	public void setDriverClass(String driverClass) {
-		this.driverClass = driverClass;
-	}
 
 	public String getUsername() {
 		return username;
@@ -62,12 +49,12 @@ public class DataBaseConfig {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	
-	
+
 	@Bean
 	DataSource dataSource() throws SQLException {
 
 		OracleDataSource dataSource = new OracleDataSource();
+
 		dataSource.setUser(username);
 		dataSource.setPassword(password);
 		dataSource.setURL(url);
@@ -75,5 +62,5 @@ public class DataBaseConfig {
 		dataSource.setFastConnectionFailoverEnabled(true);
 		return dataSource;
 	}
-
+	
 }

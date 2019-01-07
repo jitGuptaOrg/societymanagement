@@ -30,7 +30,7 @@ public class SocietyController {
 	}
 	
 	@PostMapping("/createSocietyData")
-	public RegisterSocietyUser createSocietyUser(@Valid @RequestBody RegisterSocietyUser registerSocietyUser) {
+	public RegisterSocietyUser createSocietyUser(@Valid @RequestBody RegisterSocietyUser registerSocietyUser) {	
 	    return registerUserRepository.save(registerSocietyUser);
 	}
 	
