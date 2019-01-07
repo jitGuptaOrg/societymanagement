@@ -1,17 +1,34 @@
 package com.society.mangement.bean;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 @Entity
 @Table(name = "RegisterSocietyUserDetails")
-public class RegisterSocietyUser {
+@EntityListeners(AuditingEntityListener.class)
+public class RegisterSocietyUser implements Serializable {
 
+	/**
+	 * This is system generated serialVersionUID
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	private Long id;
+	
 	@Column(name = "userName")
 	private String username;
 
@@ -37,6 +54,19 @@ public class RegisterSocietyUser {
 
 	}
 
+	public RegisterSocietyUser(Long id,String username, String password, int mobileNo, String emailId, String flatNo,
+			String wingName, String owner) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.mobileNo = mobileNo;
+		this.emailId = emailId;
+		this.flatNo = flatNo;
+		this.wingName = wingName;
+		this.owner = owner;
+
+	}
+	
 	public RegisterSocietyUser(String username, String password, int mobileNo, String emailId, String flatNo,
 			String wingName, String owner) {
 		this.username = username;
@@ -47,6 +77,14 @@ public class RegisterSocietyUser {
 		this.wingName = wingName;
 		this.owner = owner;
 
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
