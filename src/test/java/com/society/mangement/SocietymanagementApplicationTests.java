@@ -22,7 +22,7 @@ public class SocietymanagementApplicationTests {
 	public void testRegisteruser() {
 		RegisterSocietyUser registerSocietyUser = new RegisterSocietyUser();
 		
-		registerSocietyUser.setId((long) 1);
+		registerSocietyUser.setId((long) 2);
 		registerSocietyUser.setFlatNo("603");
 		registerSocietyUser.setMobileNo("9028018399");
 		registerSocietyUser.setSocietyName("Rustic paradise Housing Society");

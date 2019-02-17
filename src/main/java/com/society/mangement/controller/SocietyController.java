@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,16 +36,26 @@ public class SocietyController {
 	}
 	
 	
-	@GetMapping("/societyInformation/{id}")
+	@GetMapping("/societyfind/{id}")
 	public RegisterSocietyUser getsocietyById(@PathVariable(value = "id") Long id) {
 	    return registerUserRepository.findById(id)
 	            .orElseThrow(() -> new SocietyResourceNotFound("society", "id", id));
 	}
 	
-	@RequestMapping("/hello")
-	public String getHello() {
+	// Update a Note
+	@PutMapping("/societyUpdate/{id}")
+	public RegisterSocietyUser updateNote(@PathVariable(value = "id") Long id,
+	                                        @Valid @RequestBody RegisterSocietyUser registerSocietyUser) {
 
-		return "I am in society controller";
-	}
+		RegisterSocietyUser registerUsderbySociety = registerUserRepository.findById(id)
+	            .orElseThrow(() -> new SocietyResourceNotFound("society", "id", id));
+
+		registerUsderbySociety.setId(registerSocietyUser.getId());
+		registerUsderbySociety.setEmailId(registerSocietyUser.getEmailId());
+	    
+
+		RegisterSocietyUser updatedSocietyUser = registerUserRepository.save(registerUsderbySociety);
+	    return updatedSocietyUser;
+	}	
 
 }
