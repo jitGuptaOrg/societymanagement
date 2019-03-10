@@ -56,13 +56,13 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- JDBC dependency -->
+	<!-- JDBC dependency 
+	
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0</version>
-		</dependency> 
-
+		</dependency> -->
 
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -91,7 +91,13 @@
 			<scope>compile</scope>
 		</dependency>
 
-
+	<dependency>
+	    <groupId>com.oracle</groupId>
+		<artifactId>ojdbc6</artifactId>
+		<version>11.2.0</version>
+	    <scope>system</scope>
+	    <systemPath>E:\\apache-maven-3.6.0-bin\apache-maven-3.6.0\lib\ojdbc6.jar</systemPath>
+	</dependency>
 
 	</dependencies>
 
@@ -111,7 +117,12 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+         
 		</plugins>
+		
+		 
+  
+		
 	</build>
 
 </project>
