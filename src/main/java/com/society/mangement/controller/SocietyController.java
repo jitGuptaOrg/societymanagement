@@ -54,8 +54,8 @@ public class SocietyController {
 		registerUsderbySociety.setEmailId(registerSocietyUser.getEmailId());
 	    
 
-		RegisterSocietyUser updatedSocietyUser = registerUserRepository.save(registerUsderbySociety);
-	    return updatedSocietyUser;
+	    return registerUserRepository.save(registerUsderbySociety);
+
 	}	
 
 }

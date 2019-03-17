@@ -56,13 +56,8 @@
 			<scope>runtime</scope>
 		</dependency>
 
-	<!-- JDBC dependency 
-	
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0</version>
-		</dependency> -->
+		<!-- JDBC dependency <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> 
+			<version>11.2.0</version> </dependency> -->
 
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -91,13 +86,13 @@
 			<scope>compile</scope>
 		</dependency>
 
-	<dependency>
-	    <groupId>com.oracle</groupId>
-		<artifactId>ojdbc6</artifactId>
-		<version>11.2.0</version>
-	    <scope>system</scope>
-	    <systemPath>E:\\apache-maven-3.6.0-bin\apache-maven-3.6.0\lib\ojdbc6.jar</systemPath>
-	</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0</version>
+			<scope>system</scope>
+			<systemPath>E:\\apache-maven-3.6.0-bin\apache-maven-3.6.0\lib\ojdbc6.jar</systemPath>
+		</dependency>
 
 	</dependencies>
 
@@ -107,22 +102,25 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			
-		<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-         
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.6.0.1398</version>
+			</plugin>
+
 		</plugins>
-		
-		 
-  
-		
+
 	</build>
 
 </project>

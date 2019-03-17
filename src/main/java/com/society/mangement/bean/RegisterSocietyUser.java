@@ -54,12 +54,17 @@ public class RegisterSocietyUser implements Serializable {
 	public RegisterSocietyUser() {
 
 	}
-
-	public RegisterSocietyUser(Long id, String username, String password, String mobileNo, String emailId,
-			String societyName, String flatNo, String wingName, String owner) {
+	
+	public RegisterSocietyUser(Long id, String username,String password) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		
+		
+	}
+
+	public RegisterSocietyUser(String mobileNo, String emailId,
+			String societyName, String flatNo, String wingName, String owner) {		
 		this.mobileNo = mobileNo;
 		this.emailId = emailId;
 		this.societyName = societyName;
@@ -69,19 +74,7 @@ public class RegisterSocietyUser implements Serializable {
 
 	}
 
-	public RegisterSocietyUser(String username, String password, String mobileNo, String emailId, String societyName,
-			String flatNo, String wingName, String owner) {
-		this.username = username;
-		this.password = password;
-		this.mobileNo = mobileNo;
-		this.emailId = emailId;
-		this.societyName = societyName;
-		this.flatNo = flatNo;
-		this.wingName = wingName;
-		this.owner = owner;
-
-	}
-
+	
 	public Long getId() {
 		return id;
 	}

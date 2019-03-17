@@ -16,14 +16,14 @@ public class SocietySwaggerConfig {
 	public Docket registerUserApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select().apis(RequestHandlerSelectors.basePackage("com.society.mangement.controller"))
-				.paths(RegexpURLValidator("/societyinformation.*")).build();		
+				.paths(regexpURLValidator("/societyinformation.*")).build();		
 		
 		
 	}
 
-	private Predicate<String> RegexpURLValidator(String string) {
-		Predicate<String> containsLetterA = p -> p.equals("/societyinformation.*");
-		return containsLetterA;
+	private Predicate<String> regexpURLValidator(String string) {
+		return p -> p.equals("/societyinformation.*");
+		
 	}
 
 }
