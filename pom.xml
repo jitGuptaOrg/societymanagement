@@ -87,26 +87,13 @@
 		</dependency>
 
 
-<dependency>
-    <groupId>com.oracle</groupId>
-    <artifactId>ojdbc7</artifactId>
-    <version>12.1.0.2</version>
-    <scope>system</scope>
-	<systemPath>E:\\apache-maven-3.6.0-bin\apache-maven-3.6.0\lib\ojdbc7.jar</systemPath>
-</dependency>
-
-		<!-- <dependency>
-		<groupId>com.oracle</groupId>
-   		<artifactId>ojdbc7</artifactId>
-    	<version>12.1.0.2</version>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<artifactId>ojdbc7</artifactId>
-			<version>11.2.0</version>
-			<version>12.1.0.2</version>		
-			<scope>system</scope>
-			<systemPath>E:\\apache-maven-3.6.0-bin\apache-maven-3.6.0\lib\ojdbc7.jar</systemPath>
-		</dependency> -->
+	<dependency>
+	    <groupId>com.oracle</groupId>
+	    <artifactId>ojdbc7</artifactId>
+	    <version>12.1.0.2</version>
+		 <scope>system</scope>
+	   <systemPath>E:\\apache-maven-3.6.0-bin\apache-maven-3.6.0\lib\ojdbc7.jar</systemPath>  
+	</dependency>
 
 	</dependencies>
 
