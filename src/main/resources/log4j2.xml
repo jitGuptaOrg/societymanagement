@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<congiguration>
+	<Appenders>
+		<console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>
+					%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+				</Pattern>
+			</PatternLayout>
+		</console> 
+		<File name="File" FileName="F:\SocietyController.log">
+			<PatternLayout>
+				<Pattern>
+					%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+				</Pattern>
+			</PatternLayout>
+		</File>
+	</Appenders>
+	<Loggers>
+	
+	<Logger name="com.society.mangement.SocietymanagementApplication" level="debug"
+			additivity="false">
+			<AppenderRef ref="Console" />	
+			<AppenderRef ref="File" />
+		</Logger>
+		
+		<Logger name="com.society.mangement.controller.SocietyController" level="debug"
+			additivity="false">	
+			<!-- <AppenderRef ref="Console" /> -->	
+			<AppenderRef ref="File" />
+		</Logger>
+		
+		<!-- <Logger name="com.society.mangement.SocietymanagementApplicationTests" level="debug"
+			additivity="false">	
+			<AppenderRef ref="Console" />		
+			<AppenderRef ref="File" />
+		</Logger> -->
+		<Root>
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="File" />
+
+		</Root>
+
+	</Loggers>
+</congiguration>

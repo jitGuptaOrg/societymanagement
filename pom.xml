@@ -17,6 +17,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		 <log4j.version>2.11.2</log4j.version>
+		   <disruptor.version>3.4.2</disruptor.version>
 	</properties>
 
 	<dependencies>
@@ -31,7 +33,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+            	<exclusion>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+            	</exclusion>
+			</exclusions>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
@@ -94,8 +103,24 @@
 		 <scope>system</scope>
 	   <systemPath>E:\\apache-maven-3.6.0-bin\apache-maven-3.6.0\lib\ojdbc7.jar</systemPath>  
 	</dependency>
-
-	</dependencies>
+	
+	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-log4j2</artifactId>
+    </dependency>
+    
+    <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+     </dependency>
+     
+         <!-- https://logging.apache.org/log4j/2.x/manual/async.html -->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>${disruptor.version}</version>
+        </dependency>
+     </dependencies>
 
 	<build>
 		<plugins>
