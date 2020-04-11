@@ -119,6 +119,11 @@
             <artifactId>jackson-dataformat-yaml</artifactId>
      </dependency>
      
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+     
          <!-- https://logging.apache.org/log4j/2.x/manual/async.html -->
         <dependency>
             <groupId>com.lmax</groupId>
@@ -130,8 +135,13 @@
     		<groupId>org.springframework.cloud</groupId>
     		<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 	</dependency>
-     </dependencies> 
-     
+	
+	<dependency>
+    	<groupId>org.springframework.cloud</groupId>
+   		<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+    </dependency>
+</dependencies> 
+      
     <dependencyManagement>
 		<dependencies>
 			<dependency>
