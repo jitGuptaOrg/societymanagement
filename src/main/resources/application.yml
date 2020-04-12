@@ -1,0 +1,62 @@
+# create and drop tables and sequences, loads import.sql
+# Oracle settings
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: DANT
+    password: DANT
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+# Hibernate ddl auto (create, create-drop, validate, update)
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+       dialect: org.hibernate.dialect.Oracle10gDialect
+  thymeleaf:
+    template-loader-path: classpath:/template
+    suffix: .html
+    cache: false 
+  application:
+      name: Society-Management-Application
+#Spring boot admin client
+  boot:
+   admin:
+    client:
+      url: http://localhost:9090
+# logging
+logging:
+   pattern:
+     console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+   level:
+     org:
+      hibernate:
+       SQL: debug
+
+#server port 
+server:
+  port: 8090
+  
+
+
+################# Thymeleaf information for front end########
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+######## Actuator information #########
+info:
+   app:
+    name: Society Management Application
+    description: Used for society to pay society maintanance online
+    version: 2.0.0
+    
+
+   
+management:
+  endpoints:
+   web:
+    exposure:
+     include: "*"
